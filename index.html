@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual World - Login</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="overlay"></div>
+    
+    <div class="login-container">
+        <div class="logo">
+            <img src="assets/logo.png" alt="Logo" onerror="this.src='https://via.placeholder.com/100'">
+        </div>
+
+        <h1 class="main-title">Virtual World</h1>
+        <p class="welcome-text">Welcome to Virtual world</p>
+        <p class="instruction">To gain experience, You have to submit password.</p>
+
+        <div class="login-form">
+            <input type="text" id="userName" placeholder="Name (Optional)" class="input-field">
+            <input type="password" id="password" placeholder="4 digits" maxlength="4" class="input-field">
+            
+            <button id="submitBtn" onclick="checkPassword()">Submit</button>
+            
+            <p id="errorMessage" class="error-msg"></p>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
