@@ -88,7 +88,7 @@ body:active .overlay {
 .input-field:hover {
     background: #ffffff;
     border-color: #00d4ff;
-    transform: translateY(-2px); /* সামান্য উপরে উঠবে */
+    transform: scale(1.1);
     box-shadow: 0 5px 15px rgba(0, 212, 255, 0.3);
 }
 
