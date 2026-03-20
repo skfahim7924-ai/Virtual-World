@@ -2,24 +2,16 @@ function checkPassword() {
     const passwordInput = document.getElementById('password');
     const nameInput = document.getElementById('userName');
     const errorMessage = document.getElementById('errorMessage');
-    const clickSound = document.getElementById('click-sound'); // সাউন্ড এলিমেন্ট
     
     const correctPassword = "1234";
 
-    // বাটন ক্লিক করলে সাউন্ড বাজবে
-    if (clickSound) {
-        clickSound.currentTime = 0;
-        clickSound.play();
-    }
-
     if (passwordInput.value === correctPassword) {
+        // ইউজারের নাম localStorage-এ সেভ করা হচ্ছে
         const userName = nameInput.value || "Guest";
         localStorage.setItem("playerName", userName); 
 
-        // সাউন্ড বাজার জন্য সামান্য অপেক্ষা করে তারপর অন্য পেজে যাবে
-        setTimeout(() => {
-            window.location.href = "menu.html";
-        }, 300); 
+        // সাউন্ড নেই তাই সরাসরি রিডাইরেক্ট হবে
+        window.location.href = "menu.html";
     } else {
         errorMessage.innerText = "Wrong Password";
         passwordInput.classList.add('input-error');
@@ -27,6 +19,7 @@ function checkPassword() {
             passwordInput.classList.remove('input-error');
             errorMessage.innerText = "";
         }, 2000);
+        passwordInput.value = "";
     }
 }
 
@@ -38,7 +31,7 @@ window.addEventListener('click', () => {
     }
 }, { once: true });
 
-// এন্টার চাপলে যেন পাসওয়ার্ড চেক হয়
+// এন্টার কী প্রেস হ্যান্ডলার
 const passBox = document.getElementById('password');
 if (passBox) {
     passBox.addEventListener('keypress', function (e) {
