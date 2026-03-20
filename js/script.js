@@ -21,3 +21,16 @@ function checkPassword() {
         }, 2000);
     }
 }
+
+window.addEventListener('click', () => {
+    const audio = document.getElementById('theme-song');
+    audio.play();
+}, { once: true }); // একবার ক্লিক করলেই গান শুরু হবে
+
+const button = document.querySelector('.btn');
+const sound = document.getElementById('click-sound');
+
+button.addEventListener('click', () => {
+    sound.currentTime = 0; // প্রতিবার শুরু থেকে বাজবে
+    sound.play();
+});
