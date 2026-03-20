@@ -1,29 +1,23 @@
-// পাসওয়ার্ড চেক করার ফাংশন (index.html এর জন্য)
 function checkPassword() {
     const passwordInput = document.getElementById('password');
+    const nameInput = document.getElementById('userName'); // নাম ইনপুট
     const errorMessage = document.getElementById('errorMessage');
     
-    if (!passwordInput) return; // যদি পেজে ইনপুট বক্স না থাকে তবে কোড কাজ করবে না
-
     const correctPassword = "1234";
+
     if (passwordInput.value === correctPassword) {
+        // ইউজারের নাম localStorage-এ সেভ করা হচ্ছে
+        const userName = nameInput.value || "Guest";
+        localStorage.setItem("playerName", userName); 
+
         window.location.href = "menu.html";
     } else {
+        // আগের এরর হ্যান্ডলিং কোড...
         errorMessage.innerText = "Wrong Password";
         passwordInput.classList.add('input-error');
         setTimeout(() => {
             passwordInput.classList.remove('input-error');
             errorMessage.innerText = "";
         }, 2000);
-        passwordInput.value = "";
     }
 }
-
-// এন্টার কী প্রেস হ্যান্ডলার (নিরাপদভাবে)
-const passBox = document.getElementById('password');
-if (passBox) {
-    passBox.addEventListener('keypress', function (e) {
-        if (e.key === 'Enter') checkPassword();
-    });
-}
-

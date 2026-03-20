@@ -94,7 +94,7 @@
 
 /* কার্ড ইন্টারঅ্যাকশন */
 .card:hover {
-    transform: scale(1.1) rotate(2deg);
+    transform: scale(1.1) ;
     box-shadow: 0 10px 30px rgba(0, 212, 255, 0.5);
     border-color: #00d4ff;
 }
