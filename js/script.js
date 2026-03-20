@@ -31,6 +31,13 @@ window.addEventListener('click', () => {
     }
 }, { once: true });
 
+// প্রতি সেকেন্ডে গানের বর্তমান সময় সেভ করা
+if (themeAudio) {
+    themeAudio.addEventListener('timeupdate', () => {
+        localStorage.setItem('audioTime', themeAudio.currentTime);
+    });
+}
+
 // এন্টার কী প্রেস হ্যান্ডলার
 const passBox = document.getElementById('password');
 if (passBox) {
