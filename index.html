@@ -7,6 +7,9 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <audio id="theme-song" loop>
+        <source src="theme.mp3" type="audio/mpeg">
+    </audio>
     <div class="overlay"></div>
     
     <div class="login-container">
@@ -23,6 +26,9 @@
             <input type="password" id="password" placeholder="4 digits" maxlength="4" class="input-field">
             
             <button id="submitBtn" onclick="checkPassword()">Submit</button>
+            <audio id="click-sound">
+                <source src="click.mp3" type="audio/mpeg">
+            </audio>
             
             <p id="errorMessage" class="error-msg"></p>
         </div>
