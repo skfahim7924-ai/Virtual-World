@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual World - Apps</title>
+    <link rel="stylesheet" href="css/menu-style.css">
+    <style>
+        /* ব্যাকগ্রাউন্ড হিসেবে apps.png ব্যবহার করা হয়েছে */
+        .apps-body {
+            background: url('../assets/apps.png') no-repeat center center/cover fixed !important;
+        }
+    </style>
+</head>
+<body class="menu-body apps-body">
+    <nav class="navbar">
+        <div class="nav-left">
+            <img src="assets/logo.png" alt="Logo" class="nav-logo">
+            <span class="nav-title">Virtual World - Apps</span>
+        </div>
+        <ul class="nav-right">
+            <li><a href="menu.html">Back to Menu</a></li>
+        </ul>
+    </nav>
+
+    <main class="menu-container">
+        <div class="card-grid">
+            <a href="#" class="card" style="background-image: url('assets/calculator.png');">
+                <div class="card-overlay"><span>Calculator</span></div>
+            </a>
+            
+            <a href="#" class="card" style="background-image: url('assets/calendar.png');">
+                <div class="card-overlay"><span>Calendar</span></div>
+            </a>
+
+            <a href="#" class="card" style="background-image: url('assets/clock.png');">
+                <div class="card-overlay"><span>Clock</span></div>
+            </a>
+        </div>
+    </main>
+
+    <script src="js/menu-script.js"></script>
+</body>
+</html>
